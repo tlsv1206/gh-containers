@@ -11,17 +11,19 @@ jobs:
   test:
     environment: testing
     runs-on: ubuntu-latest
-    container: 
-      image: node:16 #Image name from public repository DockerHub
+    # container: 
+    #  image: node:16 #Image name from public repository DockerHub
     env:
       MONGODB_CONNECTION_PROTOCOL: mongodb
-      MONGODB_CLUSTER_ADDRESS: label_of_service
+      MONGODB_CLUSTER_ADDRESS: l127.0.0.1:27017
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: example
       PORT: 8080
     services:
       label_of_service:
         image: mongo #Image name from public repository DockerHub
+        ports: 
+          - 27017:27017
         env:
           MONGO_INITDB_ROOT_USERNAME: root
           MONGO_INITDB_ROOT_PASSWORD: example
