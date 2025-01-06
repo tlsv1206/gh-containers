@@ -18,7 +18,7 @@ jobs:
       MONGODB_CLUSTER_ADDRESS: l127.0.0.1:27017
       MONGODB_USERNAME: root
       MONGODB_PASSWORD: example
-      # PORT: 8080
+      PORT: 8080
     services:
       label_of_service:
         image: mongo #Image name from public repository DockerHub
